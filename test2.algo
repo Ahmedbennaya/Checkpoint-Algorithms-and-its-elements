@@ -1,0 +1,25 @@
+ALGORITHM interpretPhrase
+VAR
+    i, NB_Vowels: INTEGER := 0;
+    NB_Words: INTEGER := 1;
+    str: STRING;
+
+BEGIN
+    Write("Type the sentence str: ");
+    READ(str);
+    WHILE (str[i] <> ".") DO
+        IF (str[i] = " ") THEN
+            NB_Words := NB_Words + 1;
+        END_IF;
+        
+        IF (str[i] = "a" OR str[i] = "e" OR str[i] = "i" OR str[i] = "o" OR str[i] = "u") THEN
+            NB_Vowels := NB_Vowels + 1;
+        END_IF;
+        
+        i := i + 1;
+    END_WHILE;
+    
+    Write("Total number of vowels: ", NB_Vowels);
+    Write("Total number of words: ", NB_Words);
+    Write("the length of the sentence: ", i);
+END
